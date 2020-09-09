@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { cartProduct, ICartProduct } from '../../../../shared/mocks/1-components/cart-product';
 
 @Component({
