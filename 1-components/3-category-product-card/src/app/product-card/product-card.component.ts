@@ -5,8 +5,6 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-// @ts-ignore
-import { IProduct } from '../../../../shared/mocks/1-components/product';
 
 @Component({
   selector: 'ngx-shop-content-product',
@@ -17,7 +15,7 @@ import { IProduct } from '../../../../shared/mocks/1-components/product';
 export class CategoryProductComponent {
   @Input()
   // @ts-ignore
-  public product!: IProduct = {} as IProduct;
+  public product!: any = {} as any;
 
   @Output()
   // @ts-ignore

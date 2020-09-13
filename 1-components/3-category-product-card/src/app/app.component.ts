@@ -8,9 +8,9 @@ import { oneProduct } from '../../../../shared/mocks/1-components/product';
 export class AppComponent {
   public product = oneProduct;
   public terminalMessage: string;
-  public title = '1. Интерполяция и связывание (Карточка товара cтраницы подкатигории)';
+  public title = '1. Интерполяция и связывание (Карточка товара cтраницы подкатегории)';
   public addToCart() {
-    this.terminalMessage = 'товар добавлен в карзину';
+    this.terminalMessage = 'товар добавлен в корзину';
   }
   public goToProduct() {
     this.terminalMessage = 'переход на страницу продукта';

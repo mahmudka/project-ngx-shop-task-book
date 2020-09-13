@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ICartProduct} from '../../../../../shared/mocks/1-components/cart-product';
 
 @Component({
   selector: 'app-shop-card',
@@ -8,7 +7,7 @@ import {ICartProduct} from '../../../../../shared/mocks/1-components/cart-produc
 
 export class ShopCardComponent {
 @Input()
-  public product: ICartProduct = {} as ICartProduct;
+  public product: any = {} as any;
 
 @Output()
   public increment = new EventEmitter();
