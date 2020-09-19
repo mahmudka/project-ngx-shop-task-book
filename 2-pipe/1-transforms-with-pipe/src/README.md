@@ -1,4 +1,3 @@
-## Pipes и их применение
 
 Товары которые приходят с сервера имеют структуру
 ```ts
@@ -36,17 +35,17 @@ export interface IProductImage {
 Для запуска окружения непрерывной разработки выполните команду
 
 ```bash
-npm run start:2-pipe_2-pipe_1-transforms-with-pipe
+npm run start:2-pipe_1-transforms-with-pipe
 ```
 
 Для проверки своего решения выполните
 
 ```bash
-npm run test:2-pipe_2-pipe_1-transforms-with-pipe
+npm run test:2-pipe_1-transforms-with-pipe
 ```
 
 Для проверки стилистики кода
 
 ```bash
-npm run lint:2-pipe_2-pipe_1-transforms-with-pipe
+npm run lint:2-pipe_1-transforms-with-pipe
 ```

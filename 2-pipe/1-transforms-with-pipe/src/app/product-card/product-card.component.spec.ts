@@ -4,13 +4,15 @@ import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { oneProduct } from '../../../../../shared/mocks/2-pipes/product';
 import { ImgUrlPipe } from '../pipes/img-url.pipe';
+import { ReviewPipe } from '../pipes/review.pipe';
+import { RatePipe } from '../pipes/rate.pipe';
 
 describe('[Moдуль 2]  Компонент продукта', () => {
   let fixture: ComponentFixture<ProductCardComponent>;
   let component: ProductCardComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductCardComponent, ImgUrlPipe],
+      declarations: [ProductCardComponent, ImgUrlPipe, ReviewPipe, RatePipe],
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
@@ -63,10 +65,10 @@ describe('[Moдуль 2]  Компонент продукта', () => {
     );
   });
 
-  it('тег с селектором .rate .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
-    const prodNameEL = fixture.debugElement.query(By.css('.rate .rate-amount'));
+    const prodNameEL = fixture.debugElement.query(By.css('.rate-amount'));
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзыва`
