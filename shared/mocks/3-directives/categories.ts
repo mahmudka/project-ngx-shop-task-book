@@ -10,7 +10,7 @@ export interface ISubCategory {
   category: string;
 }
 
-export const categoriesMock: ICategory[] = [
+export const categories: ICategory[] = [
   {
     _id: '5f105ea0e5e8b80ec6aad4ef',
     name: 'Инструменты',
