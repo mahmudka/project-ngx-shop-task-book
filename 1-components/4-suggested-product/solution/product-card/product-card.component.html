@@ -3,20 +3,20 @@
     <img
       loading="auto"
       class="card-img-top"
-      [src]="product.image"
-      [alt]="product.name"
+      [src]="product?.image"
+      [alt]="product?.name"
     />
   </div>
   <div class="card-body">
     <h5 class="card-title pointer">
-      {{ product.name }}
+      {{ product?.name }}
     </h5>
     <div>
       <div class="rate">
-        <p class="rate-amount ml-2">{{ product.feedbacksCount }} отзыва</p>
+        <p class="rate-amount ml-2">{{ product?.feedbacksCount }} отзыва</p>
       </div>
       <p class="card-text price-text product-price">
-        <strong>{{ product.price }}€</strong>
+        <strong>{{ product?.price }}€</strong>
       </p>
     </div>
   </div>

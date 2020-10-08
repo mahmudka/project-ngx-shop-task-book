@@ -1,0 +1,23 @@
+<div class="card-component go-to-product" (click)="redirectTo()">
+  <div class="card-img-wrap pointer">
+    <img
+      loading="auto"
+      class="card-img-top"
+      [src]="product?.images[0].url"
+      [alt]="product?.name"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title pointer">
+      {{ product?.name }}
+    </h5>
+    <div>
+      <div class="rate">
+        <p class="rate-amount ml-2">{{ product?.feedbacksCount }} отзыва</p>
+      </div>
+      <p class="card-text price-text product-price">
+        <strong>{{ product?.price }}€</strong>
+      </p>
+    </div>
+  </div>
+</div>

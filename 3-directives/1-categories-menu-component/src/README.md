@@ -12,17 +12,17 @@
 Для запуска окружения непрерывной разработки выполните команду
 
 ```bash
-npm start -- 3-directives_1-categories-menu-component
+npm run start:3-directives_1-categories-menu-component
 ```
 
 Для проверки своего решения выполните
 
 ```bash
-npm run test -- 3-directives_1-categories-menu-component
+npm run test:3-directives_1-categories-menu-component
 ```
 
 Для проверки стилистики кода
 
 ```bash
-npm run lint -- 3-directives_1-categories-menu-component
+npm run lint:3-directives_1-categories-menu-component
 ```

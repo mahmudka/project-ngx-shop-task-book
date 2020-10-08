@@ -40,11 +40,12 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect((component as any).increment).toBeInstanceOf(EventEmitter);
   });
 
-
   it('при нажатии на кнопку с селектором .increment должен вызываться метод  incrementProductInCart и срабатывать собстевнное событие increment', () => {
     spyOn(component as any, 'incrementProductInCart').and.callThrough();
     spyOn((component as any)?.increment, 'emit').and.callThrough();
-    const incrementButton = fixture.debugElement.query(By.css('button.increment'));
+    const incrementButton = fixture.debugElement.query(
+      By.css('button.increment')
+    );
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.incrementProductInCart).toHaveBeenCalledTimes(1);
     expect((component as any)?.increment.emit).toHaveBeenCalledTimes(1);
@@ -53,7 +54,9 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('при нажатии на кнопку с селектором .decrement должен вызываться метод  decrementProductInCart и срабатывать собстевнное событие decrement', () => {
     spyOn(component as any, 'decrementProductInCart').and.callThrough();
     spyOn((component as any)?.decrement, 'emit').and.callThrough();
-    const incrementButton = fixture.debugElement.query(By.css('button.decrement'));
+    const incrementButton = fixture.debugElement.query(
+      By.css('button.decrement')
+    );
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.decrementProductInCart).toHaveBeenCalledTimes(1);
     expect((component as any)?.decrement.emit).toHaveBeenCalledTimes(1);
@@ -64,10 +67,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     fixture.detectChanges();
     const imgEl = fixture.debugElement.query(By.css('.product-img img'));
     expect(imgEl).toBeTruthy();
-    const {
-      image,
-      name,
-    } = (component as any)?.product;
+    const { image, name } = (component as any)?.product;
     expect(imgEl.attributes.src).toEqual(image);
     expect(imgEl.attributes.alt).toEqual(name);
   });
@@ -75,7 +75,9 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('тег с селектором .product-desc h4.col-title должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const prodNameEL = fixture.debugElement.query(By.css('.product-desc h4.col-title'));
+    const prodNameEL = fixture.debugElement.query(
+      By.css('.product-desc h4.col-title')
+    );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       (component as any)?.product.name
@@ -85,17 +87,21 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('тег с селектором .product-desc p.rate-amount  должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const prodNameEL = fixture.debugElement.query(By.css('.product-desc p.rate-amount'));
+    const prodNameEL = fixture.debugElement.query(
+      By.css('.product-desc p.rate-amount')
+    );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзывов`
     );
   });
 
-  it('тег с селектором .product-desc span.rate-amount  должен правильно интерполировать свойство name продукта', () => {
+  it('тег с селектором .product-desc span.rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const prodNameEL = fixture.debugElement.query(By.css('.product-desc span.rate-amount'));
+    const prodNameEL = fixture.debugElement.query(
+      By.css('.product-desc span.rate-amount')
+    );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзывов`
@@ -105,18 +111,18 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('тег с селектором .product-desc .price-text strong должен правильно интерполировать  свойство price продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const {price} = (component as any)?.product;
-    const priceEl = fixture.debugElement.query(By.css('.product-desc .price-text strong'));
+    const { price } = (component as any)?.product;
+    const priceEl = fixture.debugElement.query(
+      By.css('.product-desc .price-text strong')
+    );
     expect(price).toBeTruthy();
     const priceValue = priceEl.nativeElement.textContent.trim();
-    expect(priceValue).toEqual(
-      `€${price.toString()}`
-    );
+    expect(priceValue).toEqual(`€${price.toString()}`);
   });
   it('тег с селектором .counter__value должен правильно интерполировать свойство count продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const {count} = (component as any)?.product;
+    const { count } = (component as any)?.product;
     const counterEl = fixture.debugElement.query(By.css('.counter__value'));
     expect(count).toBeTruthy();
     const countValue = counterEl.nativeElement.textContent.trim();
@@ -126,13 +132,11 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('тег с селектором .price должен правильно интерполировать результат перемножения cвойств price и count products', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
-    const {price, count} = (component as any)?.product;
+    const { price, count } = (component as any)?.product;
     const totalEl = fixture.debugElement.query(By.css('.price'));
     expect(price).toBeTruthy();
     expect(count).toBeTruthy();
     const totalValue = totalEl.nativeElement.textContent.trim();
-    expect(totalValue.toString()).toEqual(`€${(price * count)}`);
+    expect(totalValue.toString()).toEqual(`€${price * count}`);
   });
-
-
 });

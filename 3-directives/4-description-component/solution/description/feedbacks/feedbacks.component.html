@@ -1,0 +1,23 @@
+<div class="reviews">
+  <div class="add-review-container">
+    <button
+      type="submit"
+      class="btn submit btn-outline-primary px-3"
+      (click)="addNewFeedback()"
+    >
+      Добавить отзыв
+    </button>
+  </div>
+  <div *ngFor="let feedBack of feedbacks" class="review">
+    <div class="review-block">
+      <h6>Аноним</h6>
+      <ngx-shop-star-rating
+        [feedbackRate]="feedBack.rate"
+      ></ngx-shop-star-rating>
+      <p class="mt-2 mb-0 pt-1 advantages">
+        {{ feedBack.advantages }}
+      </p>
+    </div>
+  </div>
+  <div class="no-reviews" *ngIf="feedbacks?.length === 0">Нет отзывов</div>
+</div>

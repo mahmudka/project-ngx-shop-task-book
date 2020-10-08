@@ -4,12 +4,12 @@
       <img [src]="product?.image" [alt]="product?.name"/>
     </div>
     <div class="product-desc">
-      <h4 class="col-title mb-2">{{product.name}}</h4>
+      <h4 class="col-title mb-2">{{product?.name}}</h4>
       <div class="rate">
-        <span class="rate-amount ml-2 d-inline-block d-md-none">{{product.feedbacksCount}} отзывов</span>
+        <span class="rate-amount ml-2 d-inline-block d-md-none">{{product?.feedbacksCount}} отзывов</span>
       </div>
       <p class="rate-amount d-none d-md-block mt-1">
-        {{ product.feedbacksCount }} отзывов
+        {{ product?.feedbacksCount }} отзывов
       </p>
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
         <strong>€{{product?.price}}</strong>
@@ -21,7 +21,7 @@
       <button type="button" class="decrement" (click)="decrementProductInCart()">
         <img src="assets/icons/icon-minus-circle-outlined.svg" alt="minus" />
       </button>
-      <span class="counter__value">{{product.count}}</span>
+      <span class="counter__value">{{product?.count}}</span>
       <button type="button" class="increment" (click)="incrementProductInCart()">
         <img src="assets/icons/icon-plus-circle-outlined.svg" alt="plus" />
       </button>

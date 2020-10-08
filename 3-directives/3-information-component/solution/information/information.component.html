@@ -1,0 +1,71 @@
+<div class="product-info">
+  <h3 class="h5 product-name">{{ product?.name }}</h3>
+  <ngx-shop-star-rating
+    tooltip="Рейтинг товара"
+    position="left"
+    class="star-rating"
+    [feedbackRate]="product?.rating | rate"
+  >
+  </ngx-shop-star-rating>
+  <p class="rate-amount d-none d-md-block mt-1">
+    {{ product?.feedbacksCount | review }}
+  </p>
+  <div class="row flex-column-reverse flex-lg-row mt-lg-3">
+    <div class="col-md-7">
+      <h5 class="h6 mt-4">Характеристики</h5>
+      <ul
+        class="pl-3 mb-3"
+        *ngFor="let char of product?.characteristics; let i = index"
+      >
+        <li *ngIf="i < 2">
+          {{ char?.title }}
+          <ul>
+            <li *ngFor="let charItem of char?.items">
+              {{ charItem?.name }} :
+              {{ charItem?.value }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div>
+        <div class="all-characters pointer">
+          <a *ngIf="!isShow" class="show-characters" (click)="show()"
+            >Все характеристики</a
+          >
+        </div>
+
+        <div *ngIf="isShow === true">
+          <ul
+            class="pl-3 mb-3"
+            *ngFor="let char of product?.characteristics; let i = index"
+          >
+            <li *ngIf="i >= 2">
+              {{ char?.title }}
+              <ul>
+                <li *ngFor="let charItem of char?.items">
+                  {{ charItem?.name }} : {{ charItem?.value }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="characters pointer">
+            <a class="hide-characters" (click)="show()">Скрыть</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <h4 class="col-title price-text discount mb-2 mt-0">
+        {{ product?.price | currency: "EUR" }}
+      </h4>
+      <button
+        *ngIf="product != null"
+        type="submit"
+        class="submit btn btn-primary btn-lg px-3"
+        (click)="addToBasket()"
+      >
+        Добавить в корзину
+      </button>
+    </div>
+  </div>
+</div>
