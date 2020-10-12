@@ -50,7 +50,7 @@
       </g>
     </svg>
 
-    <span>6. Роутинг</span>
+    <span>{{ title }}</span>
 
     <svg
       id="rocket-smoke"
@@ -73,9 +73,9 @@
   <div class="content-wrap">
     <div class="content-block">
 
-    </div>
-    <div class="terminal">
-      <pre></pre>
+      <ngx-shop-header (goToBasket)="goToBasket()"></ngx-shop-header>
+      <router-outlet></router-outlet>
+      <ngx-shop-footer></ngx-shop-footer>
     </div>
   </div>
 </div>

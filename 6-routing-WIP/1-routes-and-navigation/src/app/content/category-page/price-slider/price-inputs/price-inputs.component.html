@@ -1,0 +1,16 @@
+<div class="form-group row align-items-center mx-0" [formGroup]="pricesGroup">
+  <label class="col-2 px-0 mb-0 text-center text-dark">От</label>
+  <input
+    [min]="options?.floor"
+    type="number"
+    formControlName="low"
+    class="form-control col-4"
+  />
+  <label class="col-2 px-0 mb-0 text-center text-dark">до</label>
+  <input
+    [max]="options?.ceil"
+    formControlName="high"
+    type="number"
+    class="form-control col-4"
+  />
+</div>

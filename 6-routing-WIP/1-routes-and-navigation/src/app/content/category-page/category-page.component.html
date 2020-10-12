@@ -1,0 +1,48 @@
+<main role="main">
+  <div class="container">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-lg-4 col-xl-3">
+          <h6 class="mt-4 mt-lg-2 mb-4">Другие категории</h6>
+          <div class="aside-accordion-menu list-group">
+            <ngx-shop-category-dropdown
+              [categories]="categories$ | async"
+              (subCategorySelectEvent)="subCategorySelect($event)"
+            >
+            </ngx-shop-category-dropdown>
+          </div>
+          <h3 class="h5 mt-5 mb-4">Фильтры по товарам</h3>
+          <h6 class="mb-2 pb-1">Названию</h6>
+          <input
+            #searchBox
+            type="text"
+            class="form-control"
+            placeholder="Фильтр по названию"
+            formControlName="text"
+          />
+
+          <ngx-shop-brands [brands]="brands$ | async" formControlName="brands">
+          </ngx-shop-brands>
+
+          <ngx-shop-price-slider formControlName="prices">
+          </ngx-shop-price-slider>
+        </div>
+
+        <div class="col-lg-8 col-xl-9 products-list">
+          <ngx-shop-content-product
+            *ngFor="let product of (products$ | async)?.items"
+            [product]="product"
+          >
+          </ngx-shop-content-product>
+
+          <div
+            class="noProducts"
+            *ngIf="(products$ | async)?.items?.length < 1"
+          >
+            <h5>К сожалению нет товаров удовлетворяющих условиям</h5>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

@@ -51,7 +51,10 @@
     "lint:5-forms_1-order-form-component": "npm run lint -- 5-forms_1-order-form-component",
     "start:5-forms_2-product-filter-component": "npm start -- 5-forms_2-product-filter-component",
     "test:5-forms_2-product-filter-component": "npm run test -- 5-forms_2-product-filter-component",
-    "lint:5-forms_2-product-filter-component": "npm run lint -- 5-forms_2-product-filter-component"
+    "lint:5-forms_2-product-filter-component": "npm run lint -- 5-forms_2-product-filter-component",
+    "start:6-routing_1-routes-and-navigation-component": "npm start -- 6-routing_1-routes-and-navigation-component",
+    "test:6-routing_1-routes-and-navigation-component": "npm run test -- 6-routing_1-routes-and-navigation-component",
+    "lint:6-routing_1-routes-and-navigation-component": "npm run lint -- 6-routing_1-routes-and-navigation-component"
   },
   "private": true,
   "dependencies": {

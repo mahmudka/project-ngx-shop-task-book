@@ -1,0 +1,13 @@
+<div class="home-page-content">
+  <div class="home-page-content-menu">
+    <ngx-shop-side-menu [categories]="categories$ | async"></ngx-shop-side-menu>
+  </div>
+
+  <div class="home-page-content-products">
+    <div class="products-wrap">
+      <div class="product" *ngFor="let product of (products$ | async)?.items">
+        <ngx-shop-product-card [product]="product"></ngx-shop-product-card>
+      </div>
+    </div>
+  </div>
+</div>
