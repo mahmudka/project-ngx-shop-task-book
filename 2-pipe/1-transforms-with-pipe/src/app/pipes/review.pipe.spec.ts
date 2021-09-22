@@ -31,9 +31,9 @@ describe('[Moдуль 2 - review pipe]', () => {
 		expect(reviewPipe.transform(115)).toEqual('115 отзывов');
 	});
 	it('Eсли значение к которому применяется pipe число заканчиваеться на 2 - 4  pipe должен возвращать "${count} отзыва"', () => {
-		expect(reviewPipe.transform(11)).toEqual('2 отзыва');
-		expect(reviewPipe.transform(12)).toEqual('34 отзыва');
-		expect(reviewPipe.transform(13)).toEqual('44 отзыва');
-		expect(reviewPipe.transform(14)).toEqual('93 отзыва');
+		expect(reviewPipe.transform(2)).toEqual('2 отзыва');
+		expect(reviewPipe.transform(34)).toEqual('34 отзыва');
+		expect(reviewPipe.transform(44)).toEqual('44 отзыва');
+		expect(reviewPipe.transform(93)).toEqual('93 отзыва');
 	});
 });
