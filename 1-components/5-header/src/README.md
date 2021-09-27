@@ -23,5 +23,5 @@ npm run test:1-components_5-header
 Для проверки стилистики кода
 
 ```bash
-npm run lint:1-components_2-footer
+npm run lint:1-components_5-header
 ```

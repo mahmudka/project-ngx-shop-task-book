@@ -316,8 +316,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "1-components/4-suggested-product/src/**/*.ts",
-              "1-components/4-suggested-product/src/**/*.html"
+              "1-components/5-header/src/**/*.ts",
+              "1-components/5-header/src/**/*.html"
             ]
           }
         }
