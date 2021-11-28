@@ -41,6 +41,7 @@ p
     min-width: 285px
     border-radius: 6px
     margin-bottom: 10px
+
 .footer
   top: 100vh
   flex-shrink: 0
@@ -522,70 +523,6 @@ img
     flex-direction: column
 
 //
-
-html,
-body
-    height: 100%
-
-body
-    font-family: "Helvetica Neue", sans-serif
-    display: flex
-    flex-direction: column
-    color: #373a3c
-    overflow-x: hidden
-
-
-
-
-
-
-@media screen and (min-width: 768px)
-    ngx-shop-product-card
-        display: flex
-        justify-content: center
-        .card-component
-            position: relative
-            display: flex
-            flex-direction: column
-            min-width: 280px
-            height: auto
-            padding: 0
-            word-wrap: break-word
-            background-color: #fff
-            background-clip: border-box
-            border: 1px solid rgba(0,0,0,.125)
-            border-radius: .25rem
-            .card-img-wrap
-                background-color: #eceeef
-                display: flex
-                flex-direction: column
-                justify-content: center
-                align-items: center
-                padding: .7rem
-                height: 180px
-                width: 100%
-                .card-img-top
-                    width: auto
-                    max-width: 100%
-                    mix-blend-mode: multiply
-                    max-height: 150px
-
-
-
-            .card-body
-                justify-content: space-between
-                display: flex
-                flex-direction: column
-                .card-title
-                    font-size: 18px
-                    line-height: 19px
-                    font-weight: 500
-                    margin-bottom: 1.25rem
-
-
-
-/**STYLES FROM CLIENT****/
-
 
 $spinner: grey
 $background: white
@@ -1483,6 +1420,9 @@ li
   transform: translate(0, -50%)
   display: inline-block
 
+li.ng-star-inserted , .sidebar .list-group-item.dropdown, .aside-accordion-menu .list-group-item li
+  white-space: normal
+
 .product-list-box
   border: 1px solid #cccccc
   border-radius: 4px
@@ -1774,7 +1714,7 @@ li
 .background-image
   position: absolute
   bottom: 0
-  right: 5%
+  right: 0
   max-height: 100%
   mix-blend-mode: darken
   max-width: 100%
@@ -1784,6 +1724,7 @@ li
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+
 .toast-top-center
   top: 0
   right: 0
@@ -1937,8 +1878,6 @@ button.toast-close-button
   height: 4px
   background-color: #000000
   opacity: 0.4
-
-
 
 /* Responsive Design */
 @media all and (max-width: 240px)
