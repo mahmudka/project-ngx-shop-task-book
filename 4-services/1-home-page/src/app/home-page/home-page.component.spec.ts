@@ -3,6 +3,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('[Moдуль 4 - Компонент домашней страницы]', () => {
 	let fixture: ComponentFixture<HomePageComponent>;
@@ -10,6 +11,8 @@ describe('[Moдуль 4 - Компонент домашней страницы]'
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [HomePageComponent, FooterComponent, HeaderComponent, SideMenuComponent],
+		}).overrideComponent(HomePageComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(HomePageComponent);
 		component = fixture.componentInstance;

@@ -1,6 +1,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { FooterComponent } from './footer.component';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('[Moдуль 4 - Футтер компонент]', () => {
 	let fixture: ComponentFixture<FooterComponent>;
@@ -8,6 +9,8 @@ describe('[Moдуль 4 - Футтер компонент]', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [FooterComponent],
+		}).overrideComponent(FooterComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(FooterComponent);
 		component = fixture.componentInstance;

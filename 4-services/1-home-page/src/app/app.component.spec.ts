@@ -12,6 +12,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { BASE_URL_TOKEN } from './services/interceptor/config';
 import { environment } from '../environments/environment';
 import { InterceptorService } from './services/interceptor/interceptor.service';
+import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('[Moдуль 4 - Компонент домашней страницы app]', () => {
 	let fixture: ComponentFixture<AppComponent>;
@@ -40,16 +42,20 @@ describe('[Moдуль 4 - Компонент домашней страницы a
 					multi: true,
 				},
 			],
+		}).overrideComponent(AppComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(AppComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
 
-	it('компонент должен иметь свойство products c значением null', () => {
-		expect((component as any).products).toBeDefined(null);
+	it('компонент должен иметь свойство products$ и быть типа Observable', () => {
+		expect(component.products$).toBeDefined();
+		expect(component.products$).toBeInstanceOf(Observable);
 	});
-	it('компонент должен иметь свойство categories c значением null', () => {
-		expect((component as any).categories).toBeDefined(null);
+	it('компонент должен иметь свойство categories  и быть типа  Observable ', () => {
+		expect(component.categories$).toBeDefined();
+		expect(component.categories$).toBeInstanceOf(Observable);
 	});
 });

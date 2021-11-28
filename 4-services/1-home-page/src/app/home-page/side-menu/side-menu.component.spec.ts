@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, DebugElement, EventEmitter } from '@angular/core';
 import {
 	categories,
 	ISubCategory,
@@ -14,6 +14,8 @@ describe('[Moдуль 4 - Компонент cписок кактегорий и
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [SideMenuComponent],
+		}).overrideComponent(SideMenuComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(SideMenuComponent);
 		component = fixture.componentInstance;

@@ -5,9 +5,9 @@ import { ICategory } from '../../../../../../shared/mocks/4-services/categories'
 
 @Injectable()
 export class CategoriesService {
-  constructor(private http: HttpClient) {}
+	public constructor(private http: HttpClient) {}
 
-  public getCategories(): Observable<ICategory[]> {
-    return this.http.get<ICategory[]>(`api/categories`);
-  }
+	public getCategories(): Observable<ICategory[]> {
+		return this.http.get<ICategory[]>(`api/categories`);
+	}
 }

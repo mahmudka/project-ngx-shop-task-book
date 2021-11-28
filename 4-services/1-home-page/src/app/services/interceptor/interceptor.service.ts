@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpInterceptor } from '@angular/common/http';
 
 export interface IRes<T> {
 	data: T;
@@ -6,4 +7,4 @@ export interface IRes<T> {
 }
 
 @Injectable()
-export class InterceptorService {}
+export class InterceptorService implements HttpInterceptor {}

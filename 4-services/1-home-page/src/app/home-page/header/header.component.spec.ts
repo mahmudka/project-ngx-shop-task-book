@@ -1,6 +1,6 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import { HeaderComponent } from './header.component';
 
 describe('[Moдуль 4 - Header компонент]', () => {
@@ -9,6 +9,8 @@ describe('[Moдуль 4 - Header компонент]', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [HeaderComponent],
+		}).overrideComponent(HeaderComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(HeaderComponent);
 		component = fixture.componentInstance;

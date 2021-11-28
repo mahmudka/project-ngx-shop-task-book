@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import { ProductCardComponent } from './product-card.component';
 import { products } from '../../../../../../shared/mocks/4-services/products';
 
@@ -10,6 +10,8 @@ describe('[Moдуль 4 - Компонент рекомендуемого тов
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [ProductCardComponent],
+		}).overrideComponent(ProductCardComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(ProductCardComponent);
 		component = fixture.componentInstance;

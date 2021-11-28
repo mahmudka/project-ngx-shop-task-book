@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'ngx-shop-root',
@@ -6,6 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
-export class AppComponent {
+export class AppComponent implements OnInit {
 	public title = 'Компонент домашней страницы';
 }
