@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ChangeDetectionStrategy, DebugElement } from '@angular/core';
 import { StarRatingComponent } from './star-rating.component';
 import { oneProduct } from '../../../../../../../shared/mocks/3-directives/product';
 
@@ -10,6 +10,8 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [StarRatingComponent],
+		}).overrideComponent(StarRatingComponent, {
+			set: { changeDetection: ChangeDetectionStrategy.Default },
 		});
 		fixture = TestBed.createComponent(StarRatingComponent);
 		component = fixture.componentInstance;

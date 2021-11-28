@@ -5,13 +5,13 @@
         class="nav-item nav-link pointer description"
         [ngClass]="{ active: isShowDescription }"
         (click)="toggleTab()"
-        >Описание</a
+      >Описание</a
       >
       <a
         class="nav-item nav-link pointer feedbacks"
         [ngClass]="{ active: !isShowDescription }"
         (click)="toggleTab()"
-        >Отзывы {{ product?.feedbacksCount || 0 }}</a
+      >Отзывы {{ product?.feedbacksCount || 0 }}</a
       >
     </div>
   </nav>

@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class StarRatingComponent {
 	@Input()
 	//  @ts-ignore
-	public feedbackRate = 0;
+	public feedbackRate: number = 0;
 
 	public stars = [0, 1, 2, 3, 4];
 

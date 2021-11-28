@@ -12,7 +12,7 @@ export class AppComponent {
 
 	public product = oneProduct;
 
-	public terminalMessage = null;
+	public terminalMessage: string | null = null;
 
 	public addFeedback(value: string): void {
 		this.terminalMessage = value;

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+// @ts-ignore
 import { ICategory } from '../../../../../shared/mocks/3-directives/categories';
 
 @Component({
