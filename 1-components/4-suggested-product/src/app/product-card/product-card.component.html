@@ -1,19 +1,23 @@
-<div class="card-component go-to-product" >
+<div
+  (click)="redirectTo()"
+  class="card-component go-to-product"
+>
   <div class="card-img-wrap pointer">
     <img
-      loading="auto"
-      class="card-img-top"
-    />
+      [src]="product.image"
+      [alt]="product.name"
+      class="card-img-top"></img>
   </div>
   <div class="card-body">
     <h5 class="card-title pointer">
+      {{product.name}}
     </h5>
     <div>
       <div class="rate">
-        <p class="rate-amount ml-2"> отзыва</p>
+        <p class="rate-amount ml-2">{{product.feedbacksCount}} отзыва</p>
       </div>
       <p class="card-text price-text product-price">
-        <strong>€</strong>
+        <strong>{{product.price}}€</strong>
       </p>
     </div>
   </div>

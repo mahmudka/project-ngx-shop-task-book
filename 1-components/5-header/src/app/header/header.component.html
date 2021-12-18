@@ -1,16 +1,17 @@
-<header>
+<header (click)="redirectTo()">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <div>
         <a class="navbar-brand" ><strong>NgShop</strong></a>
       </div>
-      <a class="basket basket_not-empty pointer">
+      <a
+        (click)="redirectTo()"
+        class="basket basket_not-empty pointer"
+      >
         <img
-          loading="auto"
           src="assets/icons/icon-basket.svg"
-          alt="menu icon"
-        />
-        <span class="product-counter"></span>
+          alt="menu icon"></img>
+        <span class="product-counter">{{counter}}</span>
       </a>
     </div>
   </nav>
