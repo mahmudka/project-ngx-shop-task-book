@@ -1,10 +1,15 @@
 <div class="backdrop"></div>
 <ul class="list-group sidebar">
-  <li class="list-group-item dropdown pointer">
-    <a class="nav-link dropdown-toggle pointer"> </a>
-    <ul class="dropdown-menu">
-      <li class="dropdown-item pointer">
-        <a class="sub-category"></a>
+  <li class="list-group-item dropdown pointer" *ngFor="let category of categories">
+    <a class="nav-link dropdown-toggle pointer"
+       (click)="redirectTo(category)"
+       (mouseenter)="hover(category.name)"
+    >{{category.name}}</a>
+    <ul class="dropdown-menu" *ngIf="category.subCategories">
+      <li class="dropdown-item pointer" *ngFor="let subCategory of category.subCategories">
+        <a class="sub-category"
+           (click)="redirectTo(category)"
+        >{{subCategory.name}}</a>
       </li>
     </ul>
   </li>

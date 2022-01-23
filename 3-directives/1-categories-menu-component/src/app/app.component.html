@@ -72,7 +72,10 @@
 
   <div class="content-wrap" style="padding-top: 0;">
     <div class="content-block">
-      <ngx-shop-side-menu [categories]="categories" (categoryChange)="redirectTo($event)"></ngx-shop-side-menu>
+      <ngx-shop-side-menu
+        [categories]="categories"
+        (categoryChange)="redirectTo($event)"
+      ></ngx-shop-side-menu>
     </div>
     <div class="terminal">
       <pre>

@@ -1,11 +1,9 @@
 <div class="card-component go-to-product" (click)="redirectTo()">
   <div class="card-img-wrap pointer">
     <img
-      loading="auto"
       class="card-img-top"
       [src]="product.images | imgUrl"
-      [alt]="product.name"
-    />
+      [alt]="product.name" />
   </div>
   <div class="card-body">
     <h5 class="card-title pointer">

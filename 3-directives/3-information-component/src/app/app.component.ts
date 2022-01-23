@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { oneProduct } from '../../../../shared/mocks/3-directives/product-information';
+import { IProduct, oneProduct } from '../../../../shared/mocks/3-directives/product-information';
 
 @Component({
 	selector: 'ngx-shop-root',
@@ -10,9 +10,9 @@ import { oneProduct } from '../../../../shared/mocks/3-directives/product-inform
 export class AppComponent {
 	public title = 'Компонент информации о товаре';
 
-	public product = oneProduct;
+	public product: IProduct = oneProduct || ({} as IProduct);
 
-	public terminalMessage = null;
+	public terminalMessage = '';
 
 	public addToCart(value: string): void {
 		this.terminalMessage = value;

@@ -12,7 +12,7 @@ export class AppComponent {
 
 	public categories = categories;
 
-	public terminalMessage = null;
+	public terminalMessage = '';
 
 	public selectSubCategory(subCategory: string) {
 		this.terminalMessage = `Переход на категорию товара: ${subCategory}`;

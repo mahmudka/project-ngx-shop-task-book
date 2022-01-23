@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { IFeedback } from '../../../../../../shared/mocks/3-directives/product-information';
 
 @Component({
 	selector: 'ngx-shop-feedbacks',
@@ -6,4 +7,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 	styleUrls: ['./feedbacks.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FeedbacksComponent {}
+export class FeedbacksComponent {
+	@Input()
+	public feedbacks?: IFeedback[] = [];
+
+	@Output()
+	public addFeedbackEvent: EventEmitter<string> = new EventEmitter<string>();
+
+	public addNewFeedback(): void {
+		this.addFeedbackEvent.emit();
+	}
+}

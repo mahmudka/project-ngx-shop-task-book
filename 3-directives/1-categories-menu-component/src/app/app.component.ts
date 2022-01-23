@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { categories } from '../../../../shared/mocks/3-directives/categories';
+import { categories, ICategory } from '../../../../shared/mocks/3-directives/categories';
 
 @Component({
 	selector: 'ngx-shop-root',
@@ -8,7 +8,7 @@ import { categories } from '../../../../shared/mocks/3-directives/categories';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-	public categories = categories;
+	public categories: ICategory[] = categories;
 
 	public title = '1. Директивы (Компонент выбора подкатегории на странице рекомендации)';
 
