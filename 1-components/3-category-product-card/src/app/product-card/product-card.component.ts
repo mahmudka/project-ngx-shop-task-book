@@ -7,7 +7,6 @@ import { IProduct } from 'shared/mocks/1-components/product';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryProductComponent {
-
 	@Input()
 	public product: IProduct = {} as IProduct;
 
@@ -18,12 +17,11 @@ export class CategoryProductComponent {
 	// public goToProduct: EventEmitter<string> = new EventEmitter<string>();
 	public goToProduct: EventEmitter<string> = new EventEmitter<string>();
 
-	public addToBasket():void {
+	public addToBasket(): void {
 		this.addToCart.emit('Добавлено в корзину');
-	};
+	}
 
-	public redirectTo():void {
+	public redirectTo(): void {
 		this.goToProduct.emit('Редирект');
-	};
-	
+	}
 }
