@@ -12,13 +12,14 @@ export class ShopCardComponent {
 
 	@Output()
 	public increment: EventEmitter<number> = new EventEmitter<number>();
-	
+
 	@Output()
 	public decrement: EventEmitter<number> = new EventEmitter<number>();
 
 	public incrementProductInCart(): void {
 		this.increment.emit();
 	}
+
 	public decrementProductInCart(): void {
 		this.decrement.emit();
 	}
