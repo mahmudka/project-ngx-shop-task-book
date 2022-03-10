@@ -72,7 +72,10 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-home-page></ngx-shop-home-page>
+      <ngx-shop-home-page
+        [products]="(products$ | async)?.items || []"
+        [categories]="(categories$ | async) || []"
+      ></ngx-shop-home-page>
     </div>
   </div>
 </div>

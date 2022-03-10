@@ -1,14 +1,18 @@
-<ngx-shop-header></ngx-shop-header>
+<ngx-shop-header (goToBasket)="goToBasket()"></ngx-shop-header>
 <div class="home-page-content">
   <div class="home-page-content-menu">
     <ngx-shop-side-menu
+      [categories]="categories"
+      (categoryChange)="redirectTo($event)"
     ></ngx-shop-side-menu>
   </div>
 
   <div class="home-page-content-products">
     <div class="products-wrap">
-      <div class="product" >
+      <div class="product" *ngFor="let product of products">
         <ngx-shop-product-card
+          [product]="product"
+          (goToProduct)="goToProduct()"
         ></ngx-shop-product-card>
       </div>
     </div>

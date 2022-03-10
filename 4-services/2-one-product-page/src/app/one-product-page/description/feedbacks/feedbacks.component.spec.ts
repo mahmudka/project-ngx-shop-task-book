@@ -68,6 +68,7 @@ describe('[Moдуль 4 - Компонент отзывов товара]', () =
 		const listElements: DebugElement[] = fixture.debugElement.queryAll(By.css('.advantages'));
 		expect(listElements).toBeTruthy();
 		(component as any).feedbacks.forEach((fb: IFeedback, index: number) => {
+			// @ts-ignore
 			expect(listElements[index].nativeElement.textContent.trim()).toEqual(fb.advantages);
 		});
 	});

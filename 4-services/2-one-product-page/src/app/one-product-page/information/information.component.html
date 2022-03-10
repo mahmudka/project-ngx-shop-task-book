@@ -4,7 +4,7 @@
     tooltip="Рейтинг товара"
     position="left"
     class="star-rating"
-    [feedbackRate]="product?.rating | rate"
+    [feedbackRate]="(product?.rating || 0) | rate"
   >
   </ngx-shop-star-rating>
   <p class="rate-amount d-none d-md-block mt-1">

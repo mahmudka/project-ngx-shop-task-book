@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { IProduct } from '../../../../../../shared/mocks/4-services/products';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IProduct } from '../../../../../../shared/mocks/4-services/product-information';
 
 @Component({
 	selector: 'ngx-shop-description',
 	templateUrl: './description.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
+	// changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DescriptionComponent {
-	@Input() public product: IProduct = null;
+	@Input() public product: IProduct | null = null;
 
 	// @ts-ignore
 	public isShowDescription = true;
