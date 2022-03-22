@@ -5,13 +5,13 @@ import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angul
 	templateUrl: './header.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {	
+export class HeaderComponent {
 	@Output()
 	public goToBasket: EventEmitter<string> = new EventEmitter();
 
-	public redirectTo():void {
+	public redirectTo(): void {
 		this.goToBasket.emit();
 	}
 
-	public counter:number = 5;
+	public counter: number = 5;
 }
