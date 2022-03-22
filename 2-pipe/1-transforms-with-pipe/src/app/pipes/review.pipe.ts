@@ -14,22 +14,18 @@ export class ReviewPipe implements PipeTransform {
 		const lastTwoNumber = _countOfReviews % 100;
 
 		if (lastTwoNumber >= 11 && lastTwoNumber <= 14) {
-			return `${_countOfReviews} отзывов`
-		} 
-		if (lastNumber === 1) {
-			return `${_countOfReviews} отзыв`
+			return `${_countOfReviews} отзывов`;
 		}
-		if (lastNumber >=2 && lastNumber <=4) {
-			return `${_countOfReviews} отзыва`
+		if (lastNumber === 1) {
+			return `${_countOfReviews} отзыв`;
+		}
+		if (lastNumber >= 2 && lastNumber <= 4) {
+			return `${_countOfReviews} отзыва`;
 		}
 		if (lastNumber === 5) {
-			return `${_countOfReviews} отзывов`
+			return `${_countOfReviews} отзывов`;
 		}
 
 		return '';
 	}
 }
-
-// feedbacksCount содержит число отзывов. 
-// Напишите pipe, который будет добавлять слово отзыв в нужном падеже. 
-// Например 1 отзыв, 11 отзывов и так далее.
