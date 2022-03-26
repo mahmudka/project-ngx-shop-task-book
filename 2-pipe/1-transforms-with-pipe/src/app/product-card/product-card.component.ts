@@ -8,7 +8,8 @@ import { IProduct } from '../../../../../shared/mocks/2-pipes/product';
 })
 // @ts-ignore
 export class ProductCardComponent {
-	@Input() public product: IProduct = {} as IProduct;
+	@Input() 
+	public product!: IProduct;
 
 	@Output() public goToProduct: EventEmitter<void> = new EventEmitter();
 

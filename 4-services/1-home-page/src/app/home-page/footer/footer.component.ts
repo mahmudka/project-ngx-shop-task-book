@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 // @ts-ignore
 export class FooterComponent {
-	public author = 'Angular Course';
+	public readonly author = 'Angular Course';
 
 	public currentYear: number = new Date().getFullYear();
 }

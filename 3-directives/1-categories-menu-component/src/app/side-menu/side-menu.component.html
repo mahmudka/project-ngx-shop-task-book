@@ -1,15 +1,20 @@
 <div class="backdrop"></div>
 <ul class="list-group sidebar" *ngFor="let category of categories">
   <li class="list-group-item dropdown pointer">
-    <a class="nav-link dropdown-toggle pointer" 
+    <a 
+      class="nav-link dropdown-toggle pointer" 
       (mouseenter)="hover(category?.name)"
       (mouseLeave)="mouseLeave()"
       (click)="redirectTo(category?._id)"
     >
       {{ category?.name }}
     </a>
-    <ul class="dropdown-menu" 
+    <!-- <ul class="dropdown-menu" 
       [ngClass]="{ show: category?.name === currentName }"
+    > -->
+    <ul 
+      class="dropdown-menu" 
+      #submenu
     >
       <li class="dropdown-item pointer" 
         *ngFor="let subCategory of category?.subCategories"

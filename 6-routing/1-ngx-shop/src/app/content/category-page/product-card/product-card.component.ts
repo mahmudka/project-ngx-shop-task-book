@@ -10,7 +10,7 @@ import { CartService } from '../../../services/cart.service';
 })
 export class CategoryProductComponent {
 	@Input()
-	public product: IProduct = {} as IProduct;
+	public product!: IProduct;
 
 	public constructor(private router: Router, private readonly cartService: CartService) {}
 

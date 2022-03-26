@@ -8,7 +8,7 @@ import { IProduct } from 'shared/mocks/1-components/product';
 })
 export class CategoryProductComponent {
 	@Input()
-	public product: IProduct = {} as IProduct;
+	public product!: IProduct;
 
 	@Output()
 	public addToCart: EventEmitter<string> = new EventEmitter<string>();
