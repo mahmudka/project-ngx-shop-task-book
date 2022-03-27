@@ -9,13 +9,10 @@
     >
       {{ category?.name }}
     </a>
-    <!-- <ul class="dropdown-menu" 
-      [ngClass]="{ show: category?.name === currentName }"
-    > -->
     <ul 
       class="dropdown-menu" 
-      #submenu
-    >
+      [ngClass]="{ show: isDropdownMenuShow(category, currentName) }"    
+      >
       <li class="dropdown-item pointer" 
         *ngFor="let subCategory of category?.subCategories"
       >

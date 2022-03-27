@@ -9,13 +9,11 @@ export class RatePipe implements PipeTransform {
 		const ratingAfterDot = value % 1;
 
 		if (ratingAfterDot < 0.25) {
-		    return  Math.trunc(value)
+			return Math.trunc(value);
 		}
-		
 		if (ratingAfterDot >= 0.25 && ratingAfterDot < 0.75) {
-		    return Math.trunc(value) + 0.5;
+			return Math.trunc(value) + 0.5;
 		}
-
-    	return Math.trunc(value) + 1;
+		return Math.trunc(value) + 1;
 	}
 }
