@@ -6,7 +6,11 @@ import { IProductImage } from '../../../../../shared/mocks/2-pipes/product';
 })
 // @ts-ignore
 export class ImgUrlPipe implements PipeTransform {
-	public transform(_images: IProductImage[] | undefined): string {
-		return '';
+	public transform(images: IProductImage[] | undefined): string {
+		if (!Array.isArray(images)) {
+			return '';
+		}
+
+		return images[0]?.url ?? '';
 	}
 }

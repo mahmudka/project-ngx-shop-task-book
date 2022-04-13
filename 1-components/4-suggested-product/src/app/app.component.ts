@@ -7,7 +7,7 @@ import { oneProduct } from '../../../../shared/mocks/1-components/product';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-	public terminalMessage: string;
+	public terminalMessage!: string;
 
 	public title = '1. Интерполяция и связывание (Карточка товара на главной странице)';
 

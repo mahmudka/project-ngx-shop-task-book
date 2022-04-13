@@ -9,7 +9,7 @@ import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 })
 export class ProductCardComponent {
 	@Input()
-	public product: IProduct = {} as IProduct;
+	public product!: IProduct;
 
 	public constructor(private router: Router) {}
 
